@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+
+<body>
+    <h1>{{ title }}</h1>
+    <table>
+        <tbody>
+            {% for empleado in empleados %}
+            <tr>
+                <td>{{ empleado.codEmpleado }}</td>
+                <td>{{ empleado.nomEmpleado }}</td>
+                <td>{{ empleado.nomCentroTrabajo }}</td>
+            </tr>
+            {% else %}
+                <td colspan="3">No hay empleados registrados</td>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
