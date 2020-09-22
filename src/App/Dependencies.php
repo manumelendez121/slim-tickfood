@@ -2,7 +2,7 @@
 
 use Psr\Container\ContainerInterface;
 
-$app->getContainer()->set('db',function(ContainerInterface $ci){
+$app->getContainer()->set('db', function (ContainerInterface $ci) {
     $config = $ci->get('db_settings');
 
     $opt= [
@@ -16,8 +16,11 @@ $app->getContainer()->set('db',function(ContainerInterface $ci){
 
 
 
-$app->getContainer()->set('view',function(ContainerInterface $ci){
+$app->getContainer()->set('view', function (ContainerInterface $ci) {
     return Slim\Views\Twig::create(__DIR__.'/../../views', ['cache' => __DIR__.'/../../cache']);
 });
 
 
+$app->getContainer()->set('view-nocache', function (ContainerInterface $ci) {
+    return Slim\Views\Twig::create(__DIR__.'/../../views');
+});
